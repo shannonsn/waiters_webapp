@@ -1,18 +1,27 @@
 <center>
 
-<h1>WELCOME TO THE WAITER WEBAPP</h1>
+    <h1>WELCOME TO THE WAITER WEBAPP</h1>
 
-<br>
-<h2>Which days are you willing to work</h2>
-<br>
+    <br>
+    <h2>Which days are you willing to work</h2>
+    <br>
 
-<form class="" action="/" method="post">
-  <input type="checkbox" name="" value="">Monday
-  <input type="checkbox" name="" value="">Tuesday
-  <input type="checkbox" name="" value="">Wednesday
-  <input type="checkbox" name="" value="">Thursday
-  <input type="checkbox" name="" value="">Friday
-  <input type="checkbox" name="" value="">Saturday
-  <input type="checkbox" name="" value="">Sunday
-</form>
+    <form class="" action="/waiters" method="post">
+        <input type="text" name="newName" value="">
+        <br>
+        <!-- <label for="mon"></label> -->
+        <input type="checkbox" value="mon" name="day">Monday
+        <input type="checkbox" value="tue" name="day">Tuesday
+        <input type="checkbox" value="wed" name="day">Wednesday
+        <input type="checkbox" value="thur" name="day">Thursday
+        <input type="checkbox" value="fri" name="day">Friday
+        <input type="checkbox" value="sat" name="day">Saturday
+        <input type="checkbox" value="sun" name="day">Sunday
+        <input type="submit" name="submit" value="submit">
+    </form>
+    <p>
+      {{#each names}}
+      {{this}}
+      {{/each}}
+    </p>
 </center>

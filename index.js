@@ -1,33 +1,42 @@
   const express = require('express');
   const exphbs = require('express-handlebars');
   const bodyParser = require('body-parser');
-
-var app = express();
-
-app.use(express.static('public'))
-
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+  const mongoose = require('mongoose');
+  const app = express();
 
 
-// create a route
-app.get('/waiters', function (req, res) {
- res.render('add');
-});
+  const Waiter = require('./waiter');
+  const models = require('./models/waiterSchemaModel');
 
-//start the server
+  const waiter = Waiter(models);
 
- app.use(function (err, req, res, next) {
-   console.error(err.stack)
-   res.status(500).send('Something broke!')
- })
+  // contst index = require('./')
+
+  app.use(express.static('public'))
+
+  app.engine('handlebars', exphbs({
+      defaultLayout: 'main'
+  }));
+  app.set('view engine', 'handlebars');
+
+  app.use(bodyParser.urlencoded({
+      extended: false
+  }));
+  app.use(bodyParser.json());
 
 
- const port = process.env.PORT || 8080;
+  // create a route
+  app.get('/waiters', waiter.index);
+  app.post('/waiters', waiter.getName);
 
- app.listen(port , function(){
-   console.log('app super ready to go:' + port);
- });
+  //start the server
+  const port = process.env.PORT || 8080;
+
+  app.use(function(err, req, res, next) {
+      console.error(err.stack)
+      res.status(500).send('Something broke!')
+  })
+
+  app.listen(port, function() {
+      console.log('app super ready to go:' + port);
+  });
