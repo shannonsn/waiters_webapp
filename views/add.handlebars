@@ -5,23 +5,31 @@
     <br>
     <h2>Which days are you willing to work</h2>
     <br>
-
-    <form class="" action="/waiters" method="post">
-        <input type="text" name="newName" value="">
+    {{username}}
+  </center>
+    <section>
+      <form class="" action="" method="post">
         <br>
-        <!-- <label for="mon"></label> -->
-        <input type="checkbox" value="mon" name="day">Monday
-        <input type="checkbox" value="tue" name="day">Tuesday
-        <input type="checkbox" value="wed" name="day">Wednesday
-        <input type="checkbox" value="thur" name="day">Thursday
-        <input type="checkbox" value="fri" name="day">Friday
-        <input type="checkbox" value="sat" name="day">Saturday
-        <input type="checkbox" value="sun" name="day">Sunday
+        <input type="checkbox" value="Monday" name="day">Monday <br>
+        <input type="checkbox" value="Tueday" name="day">Tuesday <br>
+        <input type="checkbox" value="Wednesday" name="day">Wednesday <br>
+        <input type="checkbox" value="Thurday" name="day">Thursday <br>
+        <input type="checkbox" value="Friday" name="day">Friday <br>
+        <input type="checkbox" value="Saturday" name="day">Saturday <br>
+        <input type="checkbox" value="Sunday" name="day">Sunday <br><br>
         <input type="submit" name="submit" value="submit">
-    </form>
+      </form>
+    </section>
+    <center>
+      <br>
+      <br>
+    <button type="button" name="button"><a href="/days">waiters available</a></button>
     <p>
-      {{#each names}}
-      {{this}}
-      {{/each}}
+      <h1 class="name1">{{name}}</h1>
+        {{#each day}}
+            {{this}}
+        {{/each}}
+        <br>
+        {{mes}}
     </p>
 </center>

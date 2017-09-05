@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-const mongoURL = process.env.MONGO_DB_URL || "mongodb://localhost/waitersAvailability";
+const mongoURL = process.env.MONGO_DB_URL || "mongodb://localhost/waiterAvailability";
 
 mongoose.connect(mongoURL, {
     useMongoClient: true
@@ -12,12 +12,11 @@ mongoose.connect(mongoURL, {
     }
 });
 
-var waiterSchema = new  mongoose.Schema({
-         name: String,
-         days: String
-
+var waiterSchema = new mongoose.Schema({
+    username: String,
+    day : Object
 });
 
-const waiters = mongoose.model('waiters' , waiterSchema)
+const waiters = mongoose.model('waiters', waiterSchema)
 
 module.exports = waiters;

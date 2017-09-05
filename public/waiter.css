@@ -5,3 +5,33 @@ body{
   /*background: url("http://www.hotelogix.com/blog/wp-content/uploads/2015/06/hotel-waiter.jpg")no-repeat;*/
   /*background-size: cover;*/
 }
+section{
+  margin-left: 47%;
+  /*margin-right:;*/
+}
+.name1{
+  color: purple
+}
+th , table{
+  border: 1px solid black;
+
+}
+th{
+  padding: 10px;
+  font-size: 42px;
+}
+#highlight1{
+font-size: 1.5em;
+  background-color: green;
+}
+#highlight2{
+  font-size: 1.5em;
+  background-color: red;
+}
+#highlight3{
+  font-size: 1.5em;
+  background-color: orange;
+}
+#welcome{
+  font-size: 3em;
+}

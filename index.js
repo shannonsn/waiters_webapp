@@ -24,10 +24,21 @@
   }));
   app.use(bodyParser.json());
 
-
   // create a route
-  app.get('/waiters', waiter.index);
-  app.post('/waiters', waiter.getName);
+  app.get('/waiters/:username', function(req , res){
+    res.render("add", {username: "Welcome " + req.params.username + ", Please select preferred working days"});
+  });
+  app.post('/waiters/:username', waiter.getName);
+
+app.get('/days', function(req , res){
+  res.render("index")
+})
+  app.post('/days', waiter.addOn)
+
+  // app.get('/days', waiter.index);
+
+
+
 
   //start the server
   const port = process.env.PORT || 8080;
