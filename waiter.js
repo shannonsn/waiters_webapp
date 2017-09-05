@@ -23,6 +23,7 @@ module.exports = function(waiterSchemaModel) {
 
 
     var getName = function(req, res) {
+      daysObj = {};
         var name = req.params.username;
         var day = req.body.day;
         var button = req.body.submit;
@@ -43,7 +44,7 @@ module.exports = function(waiterSchemaModel) {
             });
 
             daysArr.push(day);
-console.log(daysArr);
+// console.log(daysArr);
 
             res.render('add', {
                 name: name,

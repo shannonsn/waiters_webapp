@@ -1,35 +1,39 @@
-<center>
-
-    <h1>WELCOME TO THE WAITER WEBAPP</h1>
-
-    <br>
-    <h2>Which days are you willing to work</h2>
-    <br>
-    {{username}}
-  </center>
-    <section>
-      <form class="" action="" method="post">
-        <br>
-        <input type="checkbox" value="Monday" name="day">Monday <br>
-        <input type="checkbox" value="Tueday" name="day">Tuesday <br>
-        <input type="checkbox" value="Wednesday" name="day">Wednesday <br>
-        <input type="checkbox" value="Thurday" name="day">Thursday <br>
-        <input type="checkbox" value="Friday" name="day">Friday <br>
-        <input type="checkbox" value="Saturday" name="day">Saturday <br>
-        <input type="checkbox" value="Sunday" name="day">Sunday <br><br>
-        <input type="submit" name="submit" value="submit">
-      </form>
-    </section>
+<section id="login">
     <center>
-      <br>
-      <br>
-    <button type="button" name="button"><a href="/days">waiters available</a></button>
+        <h1>WELCOME TO THE WAITER WEBAPP</h1>
+<br>
+        <h2>Which days are you willing to work</h2>
+        <br> {{username}} {{name}}
+    </center>
+    <section class="middleBox">
+        <form class="" action="" method="post">
+            <br>
+            <input type="checkbox" value="Monday" name="day">Monday <br>
+            <input type="checkbox" value="Tueday" name="day">Tuesday <br>
+            <input type="checkbox" value="Wednesday" name="day">Wednesday <br>
+            <input type="checkbox" value="Thurday" name="day">Thursday <br>
+            <input type="checkbox" value="Friday" name="day">Friday <br>
+            <input type="checkbox" value="Saturday" name="day">Saturday <br>
+            <input type="checkbox" value="Sunday" name="day">Sunday <br><br>
+            <input type="submit" name="submit" value="submit">
+        </form>
+    </section>
+</section>
+<center id="output">
+    <br>
     <p>
-      <h1 class="name1">{{name}}</h1>
+        <h1 class="name1">{{name}}</h1>
         {{#each day}}
             {{this}}
         {{/each}}
-        <br>
-        {{mes}}
+        <br> {{mes}}
     </p>
+    <button type="button" name="button"><a href="/days">waiters available</a></button>
 </center>
+<br>
+<footer class="footer">
+    <center>
+        <p><a href="https://shannonsn.github.io/portfolio/" target="_blank">Github Profile</a>
+            <img src="https://www.spreadshirt.com/image-server/v1/designs/11245253,width=178,height=178/nerd-panda.png" alt="" height="50px"></p>
+    </center>
+</footer>
