@@ -4,7 +4,7 @@ h1{
 }
 body{background-color: silver;
   margin: 0;
-  /*background: url("http://www.hotelogix.com/blog/wp-content/uploads/2015/06/hotel-waiter.jpg")no-repeat;*/
+  /*background: url("https://i.pinimg.com/736x/76/56/52/765652324719e5cc8d7f918487f0c399--burnt-orange-weddings-orange-wedding-colors.jpg")no-repeat;*/
   /*background-size: cover;*/
 }
 .middleBox{
@@ -15,7 +15,8 @@ body{background-color: silver;
   color: red
 }
 th , table{
-  border: 1px solid black;
+  /*width: 100%*/
+  border: 0.1px solid black;
 
 }
 th{
@@ -48,6 +49,7 @@ font-size: 1.5em;
   width: 100%;
   background-color: rgba(255,255,255,0.2);
   height: 5em;
+  bottom: 0;
   position: absolute;
 }
 #output{

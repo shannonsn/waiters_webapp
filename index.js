@@ -28,14 +28,11 @@
   app.get('/waiters/:username', function(req , res){
     res.render("add", {username: "Welcome " + req.params.username + ", Please select preferred working days"});
   });
+
   app.post('/waiters/:username', waiter.getName);
+  app.get('/days', waiter.admin)
 
-app.get('/days', function(req , res){
-  res.render("index")
-})
-  app.post('/days', waiter.addOn)
 
-  // app.get('/days', waiter.index);
 
 
 
