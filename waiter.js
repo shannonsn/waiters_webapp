@@ -3,23 +3,16 @@ module.exports = function(waiterSchemaModel) {
     var daysArr = [];
     var daysObj = {};
 
-    var Monday = [];
-    var Tuesday = [];
-    var Wednesday = [];
-    var Thursday = [];
-    var Friday = [];
-    var Saturday = [];
-    var Sunday = [];
-
     var admin = function(req, res, err) {
         waiterSchemaModel.find({}, function(err, result) {
             Monday = [];
             Tuesday = [];
-            Wednesday = [];
-            Thursday = [];
-            Friday = [];
-            Saturday = [];
-            Sunday = [];
+            Wednesday = []
+            Thursday = []
+            Friday = []
+            Saturday = []
+            Sunday = []
+
 
             if (err) {
                 console.log(err);
@@ -47,8 +40,10 @@ module.exports = function(waiterSchemaModel) {
                     }
                 }
 
+
                 res.render('index', {
                     Monday: Monday,
+                    // MondayColor: highLight1,
                     Tuesday: Tuesday,
                     Wednesday: Wednesday,
                     Thursday: Thursday,
@@ -94,7 +89,6 @@ module.exports = function(waiterSchemaModel) {
                 username: name,
                 day: daysObj
             });
-
 
             daysArr.push(day);
 
