@@ -1,17 +1,26 @@
 module.exports = function(waiterSchemaModel) {
     var list = {};
-    var daysArr = [];
     var daysObj = {};
+
+    function color(days) {
+        if (days === 3) {
+            return "highlight1";
+        } else if (days < 3) {
+            return "highlight2";
+        } else if (days > 3) {
+            return "highlight3";
+        }
+    }
 
     var admin = function(req, res, err) {
         waiterSchemaModel.find({}, function(err, result) {
             Monday = [];
             Tuesday = [];
-            Wednesday = []
-            Thursday = []
-            Friday = []
-            Saturday = []
-            Sunday = []
+            Wednesday = [];
+            Thursday = [];
+            Friday = [];
+            Saturday = [];
+            Sunday = [];
 
 
             if (err) {
@@ -39,19 +48,24 @@ module.exports = function(waiterSchemaModel) {
                         }
                     }
                 }
-
-
                 res.render('index', {
                     Monday: Monday,
-                    // MondayColor: highLight1,
+                    MondayColor: color(Monday.length),
                     Tuesday: Tuesday,
+                    TuesdayColor: color(Tuesday.length),
                     Wednesday: Wednesday,
+                    WednesdayColor: color(Wednesday.length),
                     Thursday: Thursday,
+                    ThursdayColor: color(Thursday.length),
                     Friday: Friday,
+                    FridayColor: color(Friday.length),
                     Saturday: Saturday,
-                    Sunday: Sunday
+                    SaturdayColor: color(Saturday.length),
+                    Sunday: Sunday,
+                    SundayColor: color(Sunday.length)
                 });
             }
+
         });
     };
 
@@ -75,7 +89,10 @@ module.exports = function(waiterSchemaModel) {
         var day = req.body.day;
         var button = req.body.submit;
 
-        if (list[name] === undefined && list[day] === undefined) {
+        // go through the database and look for the name..
+        // if it is not found create else return th resulte
+
+        if (list[name] === undefined) {
             for (var i = 0; i < day.length; i++) {
                 daysObj[day[i]] = true;
             }
@@ -84,13 +101,10 @@ module.exports = function(waiterSchemaModel) {
                 day: daysObj
 
             };
-
             waiterSchemaModel.create({
                 username: name,
                 day: daysObj
             });
-
-            daysArr.push(day);
 
             res.render('add', {
                 name: name,
@@ -98,12 +112,12 @@ module.exports = function(waiterSchemaModel) {
                 mes: "Was successfully selected"
             });
         }
-    };
+};
 
-    return {
-        index,
-        getName,
-        addOn,
-        admin
-    };
+return {
+    index,
+    getName,
+    addOn,
+    admin
+};
 };

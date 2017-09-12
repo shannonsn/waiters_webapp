@@ -3,9 +3,7 @@ h1{
   color: red;
 }
 body{background-color: silver;
-  margin: 0;
-  /*background: url("https://i.pinimg.com/736x/76/56/52/765652324719e5cc8d7f918487f0c399--burnt-orange-weddings-orange-wedding-colors.jpg")no-repeat;*/
-  /*background-size: cover;*/
+  /*margin: 0;*/
 }
 .middleBox{
   margin-left: 47.5%;
@@ -22,16 +20,16 @@ th{
   padding: 10px;
   font-size: 42px;
 }
-#highlight1{
-font-size: 1.5em;
+.highlight1{
+/*font-size: 1.5em;*/
   background-color: green;
 }
-#highlight2{
-  font-size: 1.5em;
+.highlight2{
+  /*font-size: 1.5em;*/
   background-color: red;
 }
-#highlight3{
-  font-size: 1.5em;
+.highlight3{
+  /*font-size: 1.5em;*/
   background-color: orange;
 }
 #welcome{
@@ -45,7 +43,7 @@ font-size: 1.5em;
   background-color: rgba(255,255,255,0.2);
 }
 .footer{
-  width: 100%;
+  width: 98.9%;
   background-color: rgba(255,255,255,0.2);
   height: 5em;
   bottom: 0;

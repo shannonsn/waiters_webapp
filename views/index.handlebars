@@ -3,15 +3,15 @@
 </center>
 <section>
     <table>
-        <th id="highlight1">
+        <th class="highlight1">
             green
         </th>
         <td>enough waiters</td>
-        <th id="highlight2">
+        <th class="highlight2">
             red
         </th>
         <td>more waiters needed</td>
-        <th id="highlight3">
+        <th class="highlight3">
             orange
         </th>
         <td>slow down over enough waiters</td>
@@ -24,13 +24,13 @@
 <br>
 <table border='1'>
     <tr>
-        <th class='{{MondayColor}}'>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Saturday</th>
-        <th>Sunday</th>
+        <th class="{{MondayColor}}">Monday</th>
+        <th class="{{TuesdayColor}}">Tuesday</th>
+        <th class="{{WednesdayColor}}">Wednesday</th>
+        <th class="{{ThursdayColor}}">Thursday</th>
+        <th class="{{FridayColor}}">Friday</th>
+        <th class="{{SaturdayColor}}">Saturday</th>
+        <th class="{{SundayColor}}">Sunday</th>
     </tr>
 
     <tr>
@@ -44,7 +44,7 @@
         <td>
             {{#Tuesday}}
                 <ul>
-                    <li>{{this}}</li>
+                <li>{{this}}</li>
                 </ul>
             {{/Tuesday}}
         </td>
@@ -86,5 +86,5 @@
     </tr>
 </table>
 <br><br><br><br>
-<button type="button" value="drop" name="button">update days</button>
+<button type="button" name="button"><a href="waiters/">update days</a></button>
 <br>
