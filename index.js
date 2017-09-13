@@ -22,7 +22,7 @@
       extended: false
   }));
   app.use(bodyParser.json());
-  app.get('/', function(req, res){res.redirect('/waiters/')})
+  // app.get('/', function(req, res){res.redirect('/waiters/')})
   // create a route
   app.get('/waiters/:username', function(req , res){
     res.render("add", {username: "Welcome " + req.params.username + ", Please select preferred working days"});
