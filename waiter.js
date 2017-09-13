@@ -98,10 +98,6 @@ module.exports = function(waiterSchemaModel) {
                 day: daysObj
 
             };
-            // waiterSchemaModel.create({
-            //     username: name,
-            //     day: daysObj
-            // });
 
             waiterSchemaModel.findOneAndUpdate({
                 username: name

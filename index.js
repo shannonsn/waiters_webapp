@@ -32,10 +32,6 @@
   app.post('/waiters/:username', waiter.getName);
   app.get('/days', waiter.admin)
 
-
-
-
-
   //start the server
   const port = process.env.PORT || 8080;
 
