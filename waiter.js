@@ -89,9 +89,6 @@ module.exports = function(waiterSchemaModel) {
         var day = req.body.day;
         var button = req.body.submit;
 
-        // go through the database and look for the name..
-        // if it is not found create else return th resulte
-
         if (list[name] === undefined) {
             for (var i = 0; i < day.length; i++) {
                 daysObj[day[i]] = true;
@@ -112,6 +109,21 @@ module.exports = function(waiterSchemaModel) {
                 mes: "Was successfully selected"
             });
         }
+          //   waiterSchemaModel.findOne({
+          //     username:name
+          //   },function(result){
+          //   if (result){
+          //     waiterSchemaModel.save({
+          //       day: daysObj
+          //     } else if (!result) {
+          //       waiterSchemaModel.create({
+          //         username: name,
+          //         day: daysObj
+          //       })
+          //     })
+          //   }
+          // })
+
 };
 
 return {
