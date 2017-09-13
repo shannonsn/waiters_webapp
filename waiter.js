@@ -20,9 +20,8 @@ module.exports = function(waiterSchemaModel) {
         var Friday = [];
         var Saturday = [];
         var Sunday = [];
+
         waiterSchemaModel.find({}, function(err, result) {
-
-
             if (err) {
                 console.log(err);
             } else {

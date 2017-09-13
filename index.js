@@ -10,7 +10,6 @@
 
   const waiter = Waiter(models);
 
-  // contst index = require('./')
 
   app.use(express.static('public'))
 
@@ -23,7 +22,7 @@
       extended: false
   }));
   app.use(bodyParser.json());
-
+  app.get('/', function(req, res){res.redirect('/waiters/')})
   // create a route
   app.get('/waiters/:username', function(req , res){
     res.render("add", {username: "Welcome " + req.params.username + ", Please select preferred working days"});
@@ -40,6 +39,6 @@
       res.status(500).send('Something broke!')
   })
 
-  app.listen( process.env.PORT || port, function() {
+  app.listen(port, function() {
       console.log('app super ready to go:' + port);
   });
