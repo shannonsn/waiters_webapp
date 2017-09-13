@@ -13,14 +13,14 @@ module.exports = function(waiterSchemaModel) {
     }
 
     var admin = function(req, res, err) {
+        var Monday = [];
+        var Tuesday = [];
+        var Wednesday = [];
+        var Thursday = [];
+        var Friday = [];
+        var Saturday = [];
+        var Sunday = [];
         waiterSchemaModel.find({}, function(err, result) {
-            Monday = [];
-            Tuesday = [];
-            Wednesday = [];
-            Thursday = [];
-            Friday = [];
-            Saturday = [];
-            Sunday = [];
 
 
             if (err) {
@@ -98,9 +98,24 @@ module.exports = function(waiterSchemaModel) {
                 day: daysObj
 
             };
-            waiterSchemaModel.create({
-                username: name,
-                day: daysObj
+            // waiterSchemaModel.create({
+            //     username: name,
+            //     day: daysObj
+            // });
+
+            waiterSchemaModel.findOneAndUpdate({
+                username: name
+            }, {
+              day: daysObj
+            }, function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else if (!result) {
+                    waiterSchemaModel.create({
+                        username: name,
+                        day: daysObj
+                    });
+                }
             });
 
             res.render('add', {
@@ -109,27 +124,13 @@ module.exports = function(waiterSchemaModel) {
                 mes: "Was successfully selected"
             });
         }
-          //   waiterSchemaModel.findOne({
-          //     username:name
-          //   },function(result){
-          //   if (result){
-          //     waiterSchemaModel.save({
-          //       day: daysObj
-          //     } else if (!result) {
-          //       waiterSchemaModel.create({
-          //         username: name,
-          //         day: daysObj
-          //       })
-          //     })
-          //   }
-          // })
 
-};
+    };
 
-return {
-    index,
-    getName,
-    addOn,
-    admin
-};
+    return {
+        index,
+        getName,
+        addOn,
+        admin
+    };
 };
