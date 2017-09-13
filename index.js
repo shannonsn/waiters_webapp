@@ -40,6 +40,6 @@
       res.status(500).send('Something broke!')
   })
 
-  app.listen(port, function() {
+  app.listen( process.env.PORT || port, function() {
       console.log('app super ready to go:' + port);
   });
